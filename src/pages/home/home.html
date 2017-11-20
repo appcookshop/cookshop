@@ -1,14 +1,53 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+
+  <ion-navbar  hideBackButton="true" color="dark">
+    <ion-title text-center>CookShop</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content padding class="getstart">
+    <!--  <p text-center><img src="../assets/imgs/23022205_1726961967315324_1632129002_n.png"></p>-->
+    <ion-list class="fondo">
+      <ion-item class="side-menu-item">
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+      </ion-item>
+      <ion-item class="side-menu-item">
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+
+      <button ion-button icon-left color="log" block
+       (click)="login(user)">
+      <!-- (click)="login(user)"  (click)="recipe()" -->
+          <ion-icon name="key"></ion-icon>
+            Entrar
+      </button>
+      <button ion-button icon-left color="light" block
+      (click)="register()">
+      <!-- (click)="login(user)"  -->
+          <ion-icon name="person-add"></ion-icon>
+            Registrarse
+      </button>
+
+      <h2 text-center>Versión de prueba</h2>
+
+      <button ion-button icon-left block color="danger" (click)="log()">
+      <ion-icon name="logo-google"></ion-icon>
+      Registrarse con Google
+      </button>
+
+      <button ion-button icon-left block color="facebook" (click)="signInWithFacebook(res)">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Registrarse con Facebook
+      </button>
+
+      <button ion-button icon-left block color="twit">
+      <ion-icon name="logo-twitter"></ion-icon>
+      Registrarse con Twitter
+      </button>
+
+    </ion-list>
 </ion-content>

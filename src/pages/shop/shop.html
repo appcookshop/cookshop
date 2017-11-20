@@ -1,0 +1,71 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Comprar</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <!-- MAPA QUE ESTA FUNCIONNANDOOOOOOO -->
+<agm-map [latitude]="userLat" [longitude]="userLng" [zoom]="15">
+<agm-marker [latitude]="userLat" [longitude]="userLng" iconUrl="../assets/imgs/GoogleGeo/persona.png">
+<agm-snazzy-info-window [closeWhenOthersOpen]="true">
+      <ng-template>
+        Mi ubicación en tiempo real
+      </ng-template>
+</agm-snazzy-info-window>
+</agm-marker>
+<agm-marker *ngFor="let item of ubicaciones" [latitude]="item.lat" [longitude]="item.lng" iconUrl="../assets/imgs/GoogleGeo/super.png">
+<agm-snazzy-info-window [closeWhenOthersOpen]="true">
+      <ng-template>
+        {{item.nombre}}
+      </ng-template>
+</agm-snazzy-info-window>
+</agm-marker>
+<agm-marker *ngFor="let item of supermercados | async" [latitude]="item.lat" [longitude]="item.lng" iconUrl="../assets/imgs/GoogleGeo/super.png">
+<agm-snazzy-info-window [closeWhenOthersOpen]="true">
+      <ng-template>
+        {{item.nombre}}
+      </ng-template>
+</agm-snazzy-info-window>
+</agm-marker>
+</agm-map>
+
+<!-- ******************************************************************************************************************** -->
+<!-- informacion de los profuctos de los supermercados que se encuantran en data -->
+<!-- ******************************************************************************************************************** -->
+
+
+   <ion-item-group>
+        <ion-item-divider color="dark">Abarrotes</ion-item-divider>
+        <ion-list *ngFor="let prod of productos">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img [src]="prod.imagen">
+            </ion-thumbnail>
+            <h2>{{ prod.nombre }}</h2>
+            <p>{{ prod.marca }}</p>
+            <button ion-button clear item-end icon-left><ion-icon name="cart"></ion-icon>Buy</button>
+          </ion-item>
+        </ion-list>
+  </ion-item-group>
+
+
+  <ion-item-group>
+        <ion-item-divider color="dark">Verduras</ion-item-divider>
+        <ion-list *ngFor="let ver of verduras">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img [src]="ver.imagen">
+            </ion-thumbnail>
+            <h2>{{ ver.nombre }}</h2>
+            <p>{{ ver.proveedor }}</p>
+            <button ion-button clear item-end><ion-icon name="cart"></ion-icon>Buy</button>
+          </ion-item>
+        </ion-list>
+  </ion-item-group>
+
+</ion-content>

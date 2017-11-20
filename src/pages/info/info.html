@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar color="danger">
+    <ion-title text-center>CookShop</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+<ion-content class="page-info ">
+
+  <ion-slides pager>
+    <ion-slide *ngFor="let slide of slides" class="getstart ">
+      <div class="fondito">
+        <img [src]="slide.image" class="slide-image img" />
+        <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+        <p [innerHTML]="slide.description"></p>
+      </div>
+
+
+    </ion-slide >
+    <ion-slide class="getstart ">
+<div class="fondito">
+  <img src="assets/imgs/ica-slidebox-img-4.png" class="slide-image1" />
+  <h2 class="slide-title">Registrate</h2>
+  <button ion-button large clear icon-end color="primary" >
+    Continue
+    <ion-icon name="arrow-forward"></ion-icon>
+  </button>
+</div>
+
+
+    </ion-slide>
+  </ion-slides>
+</ion-content>

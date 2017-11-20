@@ -1,0 +1,150 @@
+<ion-header>
+  <ion-navbar color="red">
+    <button ion-button [menuToggle]="activeMenu">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>
+      Premiun
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button icon-only>
+       <ion-icon name='contact'></ion-icon>
+     </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+     <ion-icon name='search'></ion-icon>
+   </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="back">
+
+    <ion-menu [content]="content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            <ion-item>
+              <ion-avatar item-start>
+                <img class="card-img-top" [src]="photoURL || 'https://api.adorable.io/avatars/109/fire.png'" width=50px>
+              </ion-avatar>
+              {{displayName}}
+            </ion-item>
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+
+      <ion-content>
+
+        <ion-list>
+          <button ion-item>
+                  Adulto Mayor
+                </button>
+        </ion-list>
+
+        <ion-list id="sidenav">
+          <ion-item (click)="menuItemHandler()">Main Menu</ion-item>
+          <button ion-item>
+                <ion-item submenu-item *ngIf="showSubmenu" icon-left>
+                  <ion-icon name="arrow-dropright"></ion-icon>
+                  Sub menu item</ion-item>
+                </button>
+          <button ion-item>
+                <ion-item submenu-item *ngIf="showSubmenu" icon-left>
+                  <ion-icon name="arrow-dropright"></ion-icon>
+                  Sub menu item</ion-item>
+                </button>
+          <button ion-item>
+                <ion-item submenu-item *ngIf="showSubmenu" icon-left>
+                  <ion-icon name="arrow-dropright"></ion-icon>
+                  Sub menu item</ion-item>
+                </button>
+
+        </ion-list>
+
+        <ion-list>
+          <button ion-item>
+                  Adulto Mayor
+                </button>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+
+    <ion-nav id="nav" #content [root]="rootPage"></ion-nav>
+
+ 
+  <h2>Firebase adultomayor</h2>
+  <ion-card *ngFor="let recis of adultomayor | async" class="bckCard">
+    <ion-card-content>
+      <img [src]="recis.img">
+      <button ion-button clear class="buttonFload"><ion-icon name="md-heart" class="rojo"></ion-icon></button>
+      <ion-card-title text-center class="title">
+        {{ recis.titulo }}
+      </ion-card-title>
+      <button ion-button block icon-left color="dark" (click)="viewRecipe(recis)">
+    <ion-icon name="eye"></ion-icon>
+    Ver Receta
+    </button>
+    </ion-card-content>
+  </ion-card>
+  <h2>Firebase basico</h2>
+  <ion-card *ngFor="let recis of basico | async" class="getstart">
+    <ion-card-content>
+      <img [src]="recis.img">
+      <button ion-button clear class="buttonFload"><ion-icon name="md-heart" class="rojo"></ion-icon></button>
+      <ion-card-title text-center>
+        {{ recis.titulo }}
+      </ion-card-title>
+      <button ion-button block icon-left (click)="viewRecipe(recis)">
+    <ion-icon name="eye"></ion-icon>
+    Ver Receta
+    </button>
+    </ion-card-content>
+  </ion-card>
+  <h2>Firebase medio</h2>
+  <ion-card *ngFor="let recis of medio | async">
+    <ion-card-content>
+      <img [src]="recis.img">
+      <button ion-button clear class="buttonFload"><ion-icon name="md-heart" class="rojo"></ion-icon></button>
+      <ion-card-title text-center>
+        {{ recis.titulo }}
+      </ion-card-title>
+      <button ion-button block icon-left (click)="viewRecipe(recis)">
+    <ion-icon name="eye"></ion-icon>
+    Ver Receta
+    </button>
+    </ion-card-content>
+  </ion-card>
+  <h2>Firebase gold</h2>
+  <ion-card *ngFor="let recis of gold | async">
+    <ion-card-content>
+      <img [src]="recis.img">
+      <button ion-button clear class="buttonFload"><ion-icon name="md-heart" class="rojo"></ion-icon></button>
+      <ion-card-title text-center>
+        {{ recis.titulo }}
+      </ion-card-title>
+      <button ion-button block icon-left (click)="viewRecipe(recis)">
+    <ion-icon name="eye"></ion-icon>
+    Ver Receta
+    </button>
+    </ion-card-content>
+  </ion-card>
+  <h2>Firebase nutricional</h2>
+  <ion-card *ngFor="let recis of nutricional | async">
+    <ion-card-content>
+      <img [src]="recis.img">
+      <button ion-button clear class="buttonFload"><ion-icon name="md-heart" class="rojo"></ion-icon></button>
+      <ion-card-title text-center>
+        {{ recis.titulo }}
+      </ion-card-title>
+      <button color="dark" ion-button block icon-left (click)="viewRecipe(recis)">
+    <ion-icon name="eye"></ion-icon>
+    Ver Receta
+    </button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

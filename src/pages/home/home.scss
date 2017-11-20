@@ -1,3 +1,41 @@
 page-home {
 
+  $SIDEMENU_TRANSPARENCY: rgba(244, 236, 238, 0.75);
+  .getstart {
+  background-image: url('../assets/imgs/d59bd86f-e88d-463f-a14b-e24e6eec8868.jpg');
+  //background: url('../assets/imgs/FijolTioPelon.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+// .fondo{
+//   background-color: rgba(244, 236, 238, 0.75);
+//   padding: 5%;
+//
+// }
+
+// ion-label{
+//   background:none;
+//   color: #eeee;
+//   font-style:italic;
+// }
+
+
+ion-button .hover{
+  color: rgb(4, 15, 8);
+}
+h2{
+  background-color: rgba(244, 236, 238, 0.75);
+}
+
+.side-menu-item{
+  background:$SIDEMENU_TRANSPARENCY;
+  font-family: monospace, bold;
+  .item-content{
+    background: $SIDEMENU_TRANSPARENCY;
+    &.activated{
+      background: $SIDEMENU_TRANSPARENCY;
+    }
+  }
+}
 }

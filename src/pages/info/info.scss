@@ -1,0 +1,49 @@
+.page-info{
+
+  .slide img {
+    max-width: 50%;
+    height: 50%;
+}
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 6px;
+  }
+
+  .fondito{
+    background-color: rgba(242, 240, 241, 0.76);
+    margin-top: 5%;
+    // margin-bottom: 5%;
+  }
+  .slide-image {
+    width: auto;
+    height: 300px;
+    max-height: 80%;
+    max-width: 100%;
+    margin: 18px 0;
+  }
+.getstart {
+    background-image: url('../assets/imgs/re.jpg');
+    //background: url('../assets/imgs/FijolTioPelon.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+  }
+
+  b {
+    font-weight: 500;
+  }
+
+  p {
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #60646B;
+
+    b {
+      color: #000000;
+    }
+  }
+
+}

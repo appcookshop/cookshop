@@ -1,0 +1,32 @@
+<ion-header>
+
+  <ion-navbar  hideBackButton="true" color="primary">
+    <ion-title text-center>Registro</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="getstart">
+  <h2 text-center>¡Bienvenidos a CookShop!</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre:</ion-label>
+      <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Apellidos:</ion-label>
+      <ion-input type="text" [(ngModel)]="user.lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Correo Electronico:</ion-label>
+      <ion-input type="text" [(ngModel)]="user.email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Contraseña:</ion-label>
+      <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+    </ion-item>
+    <button ion-button color="secondary" (click)="regis(user)">Registrar</button>
+    <button ion-button color="danger" (click)="cancel()">Cancelar</button>
+    </ion-list>
+</ion-content>
